@@ -9,10 +9,10 @@ namespace Aplication.Repository
 {
     public  interface IRepository
     {
-        Task<bool> CreateAsync(Products products);
-        Task<bool> UpdateAsync(int Id);
+        Task<Products> CreateAsync(Products products);
+        Task<bool> UpdateAsync(Products products);
         Task<bool> DeleteAsync(int Id);
-        Task<bool> GetByIdAsync(int Id);
+        Task<Products> GetByIdAsync(int Id);
         Task<IEnumerable<Products>> GetAllAsync();
     }
 }

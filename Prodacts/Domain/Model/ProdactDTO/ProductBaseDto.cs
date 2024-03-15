@@ -1,20 +1,21 @@
-﻿using System;
+﻿using Domain.Entity;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Entity
+namespace Domain.Model.ProdactDTO
 {
-    public  class Products
+    public  class ProductBaseDto
     {
-        [Key]
         public int Id { get; set; }
         public int Prise { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Country { get; set; }
         public DateTime DateTime { get; set; }
+        public IEnumerable<Products> Products { get; set; }
+
     }
 }
