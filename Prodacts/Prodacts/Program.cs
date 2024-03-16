@@ -3,6 +3,7 @@ using Infrastructure.DataAccess;
 using Infrastructure.Service;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+//builder.Services.AddSingleton<IProductService, ProductService>();
+
+
 
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddDbContext<ProductDbContext>( options => 
