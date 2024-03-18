@@ -1,7 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using Prodation.MVC.DataDB;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<ProductDbcontext>(options =>
+      options.UseNpgsql(builder.Configuration.GetConnectionString("ConectionMCV")));
 
 var app = builder.Build();
 
