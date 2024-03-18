@@ -93,6 +93,12 @@ namespace Prodacts.Controllers
 
             return Ok(new ResponseModel<ProductBaseDto>(entityDto));
         }
+        [HttpDelete]
+        public async Task<IActionResult> Delete (int Id)
+        {
+              await _repository.DeleteAsync(Id);
+            return Ok();
+        }
 
 
 
