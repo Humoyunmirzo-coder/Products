@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prodacts", "Prodacts\Prodacts.csproj", "{0D624A17-5F66-4B00-8A1D-929B510BDF33}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Products", "Prodacts\Products.csproj", "{0D624A17-5F66-4B00-8A1D-929B510BDF33}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{D97F5287-9383-4CEB-A1A1-9D15CA9960EF}"
 EndProject
@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aplication", "Aplication\Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{18B1DB37-9435-4A6F-83E9-FF97D2A50AB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prodation.MVC", "Prodation.MVC\Prodation.MVC.csproj", "{79334182-7D04-4639-A886-95E285127183}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Product.MVC", "Prodation.MVC\Product.MVC.csproj", "{79334182-7D04-4639-A886-95E285127183}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

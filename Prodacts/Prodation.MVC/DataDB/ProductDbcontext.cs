@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Prodation.MVC.Models.DbModel;
+using Prodation.MVC.Models;
 
 namespace Prodation.MVC.DataDB
 {
@@ -10,7 +10,7 @@ namespace Prodation.MVC.DataDB
         {
 
         }
-        public DbSet<ProductDB> ProductDB { get; set; }
+        public DbSet<Products> Products { get; set; }
 
         
     }
