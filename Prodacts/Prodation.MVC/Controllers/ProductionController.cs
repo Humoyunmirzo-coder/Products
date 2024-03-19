@@ -203,6 +203,21 @@ namespace Prodation.MVC.Controllers
             await _dbcontext.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        public IActionResult Details( )
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Details (Products productview)
+        {
+            var product = _dbcontext.Products.ToList();
+            List<Products> products = new List<Products>();
+
+            return View(products);
+     
+        }
+
 
 
 
