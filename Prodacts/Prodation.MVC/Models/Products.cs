@@ -7,8 +7,8 @@ namespace Prodation.MVC.Models
     {
         [Key]
         public int Id { get; set; }
-        [DisplayName("Prise")]
-        public int Prise { get; set; }
+        [DisplayName("Price")]
+        public int Price { get; set; }
         [DisplayName("Name")]
         public string Name { get; set; }
         [DisplayName("Description")]

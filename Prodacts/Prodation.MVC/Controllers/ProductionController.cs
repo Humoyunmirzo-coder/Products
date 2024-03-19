@@ -28,7 +28,7 @@ namespace Prodation.MVC.Controllers
                     {
                         Id = productlist.Id,
                         Name = productlist.Name,
-                        Prise = productlist.Prise,
+                        Price = productlist.Price,
                         Country = productlist.Country,
                         DateTime = productlist.DateTime,
                         Description = productlist.Description,
@@ -68,7 +68,7 @@ namespace Prodation.MVC.Controllers
                     var productData = new Products()
                     {
                         Id = products.Id,
-                        Prise = products.Prise,
+                        Price = products.Price,
                         Name = products.Name,
                         Country = products.Country,
                         DateTime = products.DateTime,
@@ -104,7 +104,7 @@ namespace Prodation.MVC.Controllers
                     var productData = new Products()
                     {
                         Id = products.Id,
-                        Prise = products.Prise,
+                        Price = products.Price,
                         Name = products.Name,
                         Country = products.Country,
                         DateTime = products.DateTime,
@@ -139,7 +139,7 @@ namespace Prodation.MVC.Controllers
                     var productsData = new Products()
                     {
                         Id = products.Id,
-                        Prise = products.Prise,
+                        Price = products.Price,
                         Name = products.Name,
                         Country = products.Country,
                         DateTime = products.DateTime,
@@ -188,6 +188,25 @@ namespace Prodation.MVC.Controllers
                 return View();
             }
         }
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (_dbcontext.Products == null)
+            {
+                return Problem("Entity set 'BookShopDbContext.Authors'  is null.");
+            }
+            var author = await _dbcontext.Products.FindAsync(id);
+            if (author != null)
+            {
+                _dbcontext.Products.Remove(author);
+            }
+
+            await _dbcontext.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+
+
+
 
 
     }

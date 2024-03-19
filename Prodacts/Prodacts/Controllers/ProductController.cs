@@ -48,7 +48,7 @@ namespace Prodacts.Controllers
             var productdto = new ProductBaseDto
             {
                 Id = products.Id,
-                Prise = products.Prise,
+                Price = products.Price,
                 Name = products.Name,
                 Country = products.Country,
                 DateTime = products.DateTime,
@@ -73,7 +73,7 @@ namespace Prodacts.Controllers
 
             Products productDto = new Products
             {
-                Prise = productBaseDto.Prise,
+                Price = productBaseDto.Price,
                 Name = productBaseDto.Name,
                 Country = productBaseDto.Country,
                 DateTime = productBaseDto.DateTime,
@@ -84,7 +84,7 @@ namespace Prodacts.Controllers
 
             var entityDto = new ProductBaseDto()
             {
-                Prise = productEntity.Prise,
+                Price = productEntity.Price,
                 Name = productEntity.Name,
                 Country = productEntity.Country,
                 DateTime = productEntity.DateTime,
