@@ -1,0 +1,62 @@
+﻿@model List<Prodation.MVC.Models.Products>
+@{
+	ViewData["Title"] = "Create Production";
+	var successMessage = TempData["successMessage"]?.ToString();
+	var errorMessage = TempData["errorMessage"]?.ToString();
+}
+<h1>@ViewData["Title"]</h1>
+<hr />
+@if (!string.IsNullOrWhiteSpace(successMessage))
+{
+	<div class="alert alert-success ">
+		<strong>Success!</strong>@successMessage
+		<button type="button" class="btn-close float-end " data-bs-dismiss="alter" aria-label="Close"></button>
+	</div>
+}
+else if (!string.IsNullOrWhiteSpace(errorMessage))
+{
+	<div class="alert alert-success ">
+		<strong>Error!</strong>@errorMessage
+		<button type="button" class="btn-close float-end " data-bs-dismiss="alter"></button>
+	</div>
+}
+<form>
+	<button asp-action="Create" asp-controller="ProductDB" class="btn btn-primary mb-3">Create Product</button>
+	<table class="table table-responsive table-haver table-bordered "
+			  <thead>
+				  <tr class="table-active" >
+					  <th class="text-center">Id</th>
+					  <th class="text-center">Prise</th>
+					  <th class="text-center">Name</th>
+					  <th class="text-center">Country</th>
+					  <th class="text-center">Date Of Issue</th>
+					  <th class="text-center">Description</th>
+				  </tr>
+			  </thead>
+			  <tbody>
+			@if (Model != null && Model.Any())
+			{
+				foreach (var products in Model)
+				{
+							<tr>
+												<td class="text-center">@products.Id</td>
+										<td>@products.Name</td>
+												<td class="text-center">@products.DateTime.ToString("dd/MM/yyyy")</td>
+										<td>@products.Country</td>
+										<td class="text-end">@products.Description</td>
+										<td class="text-center">
+											<div class="btn-group btn-group-sm" >
+											<a asp-controller="Employee"asp-action="Edit"  asp-route-id="@products.Id" class="btn btn-primary ">Edit</a>
+											<a asp-controller="Employee"asp-action="Delete"  asp-route-id="@products.Id" class="btn btn-danger ">Delete</a>
+									</div>
+								</td>
+							</tr>
+
+				}
+			}
+
+
+			  </tbody>
+></table>
+</form>
+
